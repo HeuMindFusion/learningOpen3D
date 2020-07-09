@@ -17,7 +17,7 @@ pcd.colors[1500] = [1, 0, 0]
 print("Find its 200 nearest neighbors, and paint them blue.")
 [k, idx, _] = pcd_tree.search_knn_vector_3d(pcd.points[1500], 200)
 np.asarray(pcd.colors)[idx[1:], :] = [0, 0, 1]
-
+o3d.visualization.draw_geometries([pcd])
 print("Find its neighbors with distance less than 0.2, and paint them green.")
 [k, idx, _] = pcd_tree.search_radius_vector_3d(pcd.points[1500], 0.2)
 np.asarray(pcd.colors)[idx[1:], :] = [0, 1, 0]
